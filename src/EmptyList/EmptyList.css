@@ -1,0 +1,20 @@
+.todo-empty-list {
+    /* border: 1px solid red; */
+    background-color: red;
+    border-radius: 4px;
+}
+
+.empty-text {
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    color: grey;
+    margin-top: 20px;
+}
+.main-empty-box {
+    /* border: 10px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -1,0 +1,17 @@
+.hii {
+    border: 1px solid rgb(209, 206, 206);
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+}
+.text-field-container {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex: 1;
+}
+
+.div-sub-task {
+}
