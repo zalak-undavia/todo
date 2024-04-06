@@ -21,7 +21,8 @@ export default function IntroPage() {
     const auth = useAuth();
     const nav = useNavigate();
 
-    const ontoGoTodolist = () => {
+    const ontoGoTodolist = (e) => {
+        e.preventDefault();
         auth.isUserLoggedIn(userNameInput);
         nav("/todoList");
     };
@@ -33,9 +34,8 @@ export default function IntroPage() {
                     <Card
                         elevation={8}
                         sx={{
+                            p: 10,
                             textAlign: "center",
-                            minWidth: "min(100% ,30vw)",
-                            height: "85vh",
                             borderRadius: "5px",
                         }}
                     >
@@ -45,7 +45,7 @@ export default function IntroPage() {
 
                         <div className="intro-img-box">
                             <CardMedia
-                                sx={{ height: "300px" }}
+                                sx={{ height: "20vh" }}
                                 component="img"
                                 image="https://i.pinimg.com/564x/78/2c/0c/782c0cb2cd1b9f9af5775d6074fe0cb4.jpg"
                             />
@@ -69,11 +69,10 @@ export default function IntroPage() {
                             </Typography>
                         </CardContent>
 
-                        <FormControl sx={{ m: 1 }} variant="outlined">
+                        <form className="intro-form" onSubmit={(e) => ontoGoTodolist(e)}>
                             <Stack sx={{ marginBottom: "10px", width: "300px", marginLeft: "5px" }}>
                                 <TextField
                                     autoFocus
-                                    sx={{ marginBottom: 2 }}
                                     label="Name"
                                     fullWidth
                                     value={userNameInput}
@@ -88,7 +87,6 @@ export default function IntroPage() {
 
                             <CardActions>
                                 <Button
-                                    onClick={() => ontoGoTodolist()}
                                     type="submit"
                                     sx={{ width: "300px", py: "15px" }}
                                     variant="contained"
@@ -97,7 +95,7 @@ export default function IntroPage() {
                                     Let's start
                                 </Button>
                             </CardActions>
-                        </FormControl>
+                        </form>
                     </Card>
                 </div>
             </div>

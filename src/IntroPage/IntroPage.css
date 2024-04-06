@@ -2,3 +2,12 @@
     /* border: 1px solid red; */
     padding: 30px;
 }
+
+.intro-form {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
