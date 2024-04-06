@@ -137,46 +137,34 @@ export default function TodoListPage() {
         return (
             <div className="paper-input-box">
                 <div className="input-form-section">
-                    <div className="input-left">
-                        <form id="submit-description-id" onSubmit={handleSubmit}>
-                            <TextField
-                                sx={{ marginRight: 1 }}
-                                fullWidth
-                                required
-                                value={inputValue}
-                                type="text"
-                                onChange={(e) => setInputValue(e.target.value)}
-                                label="Add Task"
-                                autoFocus
-                            />
-                            <TextField
-                                sx={{ marginTop: "10px" }}
-                                fullWidth
-                                size="small"
-                                value={descriptionInput}
-                                type="text"
-                                onChange={(e) => setDescriptionInput(e.target.value)}
-                                label="Description"
-                                multiline
-                                rows={3}
-                            />
-                        </form>
-                    </div>
-                </div>
-                <div className="form-btn">
-                    <Button
-                        form="submit-description-id"
-                        type="submit"
-                        sx={{
-                            py: "15px",
-                            marginLeft: "10px",
-                        }}
-                        size="large"
-                        variant="contained"
-                        color="success"
-                    >
-                        submit
-                    </Button>
+                    <form onSubmit={handleSubmit}>
+                        <TextField
+                            label="Add Task"
+                            margin="dense"
+                            size="small"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            autoFocus
+                            fullWidth
+                            required
+                        />
+                        <TextField
+                            size="small"
+                            margin="dense"
+                            value={descriptionInput}
+                            onChange={(e) => setDescriptionInput(e.target.value)}
+                            label="Description"
+                            fullWidth
+                            multiline
+                            rows={3}
+                        />
+                        <div style={{ display: "flex" }}>
+                            <div style={{ flex: 1 }}></div>
+                            <Button sx={{ marginTop: 1 }} type="submit" variant="contained" color="success">
+                                submit
+                            </Button>
+                        </div>
+                    </form>
                 </div>
             </div>
         );
@@ -186,13 +174,7 @@ export default function TodoListPage() {
         const avtarName = auth.username.split(" ");
 
         const name = avtarName
-            .filter((_, i) => {
-                if (i < 2) {
-                    return true;
-                } else {
-                    return false;
-                }
-            })
+            .filter((_, i) => i < 2) // need only the first two words
             .map((value) => value[0].toUpperCase())
             .join("");
 
@@ -211,9 +193,12 @@ export default function TodoListPage() {
                     onSubmit={(e) => searchSubmitFun(e)}
                 >
                     <TextField
-                        sx={{ maxWidth: "800px" }}
+                        sx={{ maxWidth: "600px" }}
+                        label="Search"
+                        margin="dense"
+                        size="small"
                         value={searchInput}
-                        onChange={(e) => searchOnChangeFun(e)}
+                        onChange={searchOnChangeFun}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -221,9 +206,6 @@ export default function TodoListPage() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-basic"
-                        label="Search"
-                        variant="outlined"
                         fullWidth
                     />
                 </form>

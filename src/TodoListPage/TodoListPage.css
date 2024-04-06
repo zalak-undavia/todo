@@ -148,39 +148,22 @@
 }
 
 .todo-info-detail {
-    /* border: 5px solid red; */
     display: flex;
     color: grey;
     justify-content: space-between;
     width: min(100%, 800px);
 }
 .paper-input-box {
-    /* border: 10px solid black; */
     border-top: 3px solid whitesmoke;
+
     display: flex;
-    padding-top: 18px;
     justify-content: center;
-    margin-bottom: 15px;
+
+    padding: 12px;
 }
 
 .input-form-section {
-    /* border: 1px solid blue; */
-    display: flex;
-    margin-left: 82px;
-
-    width: min(100%, 620px);
-}
-
-.input-left {
-    /* border: 1px solid red; */
-    margin-right: 0;
-    flex: 1;
-}
-
-.form-btn {
-    /* border: 1px solid black; */
-    /* display: flex; */
-    /* align-self: center; */
+    width: min(100%, 600px);
 }
 
 .avtar-todo-username {
