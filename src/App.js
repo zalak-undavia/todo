@@ -1,7 +1,6 @@
 import "./App.css";
 import IntroPage from "./IntroPage/IntroPage";
 import TodoListPage from "./TodoListPage/TodoListPage";
-import { createContext } from "react";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { AuthProvider } from "./auth";

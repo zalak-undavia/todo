@@ -4,14 +4,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import { Button, CardActionArea, CardActions, Stack } from "@mui/material";
+import { Button, CardActions, Stack } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import EastIcon from "@mui/icons-material/East";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 import "./IntroPage.css";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
@@ -38,7 +37,6 @@ export default function IntroPage() {
                             minWidth: "min(100% ,30vw)",
                             height: "85vh",
                             borderRadius: "5px",
-                            // width: "30vw",
                         }}
                     >
                         <Typography sx={{ marginTop: "20px" }} color={"grey"} variant="h3" component="div">
@@ -90,10 +88,11 @@ export default function IntroPage() {
 
                             <CardActions>
                                 <Button
+                                    onClick={() => ontoGoTodolist()}
+                                    type="submit"
                                     sx={{ width: "300px", py: "15px" }}
                                     variant="contained"
                                     endIcon={<ArrowCircleRightIcon />}
-                                    onClick={() => ontoGoTodolist()}
                                 >
                                     Let's start
                                 </Button>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./SingleTodo2.css";
 import Checkbox from "@mui/material/Checkbox";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
