@@ -1,36 +1,26 @@
-import "./TodoListPage.css";
-import InputAdornment from "@mui/material/InputAdornment";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import SearchIcon from "@mui/icons-material/Search";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
 import { Container, Draggable } from "react-smooth-dnd";
 import { arrayMoveImmutable } from "array-move";
-import EmptyList from "../EmptyList/EmptyList";
-import SingleTodo2 from "../SingleTodo2/SingleTodo2";
-import { v4 as uuidv4 } from "uuid";
-import { Paper, Stack, Typography } from "@mui/material";
 
+import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+
+import { v4 as uuidv4 } from "uuid";
+
+import EmptyList from "../EmptyList/EmptyList";
+import SingleTodo2 from "../SingleTodo2/SingleTodo2";
 
 import { useAuth } from "../auth";
+
+import "./TodoListPage.css";
 
 export default function TodoListPage() {
     const [inputValue, setInputValue] = useState("");
@@ -66,21 +56,14 @@ export default function TodoListPage() {
         setData([...data]);
     };
 
-    const onTodoDelete = (index) => {
-        data.splice(index, 1);
-        setData([...data]);
-    };
-
-    const checkedArr = data.filter((v, i) => {
-        return v.done === true;
-    });
+    const checkedArr = data.filter((v) => v.done === true);
 
     const renderListSection = () => {
         return (
             <div className="list-of-todos">
                 <Container dragHandleSelector=".drag-handle" lockAxis="y" onDrop={onDrop}>
                     {data
-                        .filter((v, index) => {
+                        .filter((v) => {
                             return v.name.includes(searchInput);
                         })
                         .map((v, i) => {
@@ -105,7 +88,7 @@ export default function TodoListPage() {
                         })}
                 </Container>
                 {doneData
-                    .filter((v, index) => {
+                    .filter((v) => {
                         return v.name.includes(searchInput);
                     })
                     .map((v, i) => {
@@ -198,7 +181,7 @@ export default function TodoListPage() {
             </div>
         );
     };
-    //
+
     const renderSearchSection = () => {
         const avtarName = auth.username.split(" ");
 
@@ -259,11 +242,9 @@ export default function TodoListPage() {
 
     const renderClearAllModal = () => {
         return (
-            <Dialog sx={{ wordSpacing: "4px" }} open={openClearAllModal} onClose={() => setOpenClearAllModal(false)}>
+            <Dialog open={openClearAllModal} onClose={() => setOpenClearAllModal(false)}>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        ARE YOU SURE YOU WANT TO DELETE ALL TASKS ?
-                    </DialogContentText>
+                    <DialogContentText>Are you sure you want to delete all tasks?</DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button
@@ -307,17 +288,7 @@ export default function TodoListPage() {
                     </div>
                     <div>
                         {data.length > 0 && (
-                            <Button
-                                // sx={{
-                                //     height: "40px",
-                                //     display: "flex",
-                                //     alignSelf: "center",
-                                //     marginRight: "20px",
-                                // }}
-                                onClick={() => setOpenClearAllModal(true)}
-                                variant="text"
-                                size="small"
-                            >
+                            <Button onClick={() => setOpenClearAllModal(true)} variant="text" size="small">
                                 CLEAR ALL
                             </Button>
                         )}
