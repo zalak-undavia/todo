@@ -6,7 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 
 import "./SubTask.css";
-import { useEffect, useState } from "react";
 
 export default function SubTask({ task, onTaskUpdate, onDeleteSubTask }) {
     const submitSubTask = (e, i) => {
