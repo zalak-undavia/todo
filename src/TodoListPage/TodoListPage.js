@@ -160,11 +160,11 @@ export default function TodoListPage() {
                                 sx={{ marginRight: 1 }}
                                 fullWidth
                                 required
-                                // size="s"
                                 value={inputValue}
                                 type="text"
                                 onChange={(e) => setInputValue(e.target.value)}
                                 label="Add Task"
+                                autoFocus
                             />
                             <TextField
                                 sx={{ marginTop: "10px" }}
@@ -200,12 +200,10 @@ export default function TodoListPage() {
     };
     //
     const renderSearchSection = () => {
-        console.log("in avatar", auth.username);
         const avtarName = auth.username.split(" ");
-        console.log("avtarName", avtarName);
 
         const name = avtarName
-            .filter((v, i) => {
+            .filter((_, i) => {
                 if (i < 2) {
                     return true;
                 } else {
@@ -214,7 +212,7 @@ export default function TodoListPage() {
             })
             .map((value) => value[0].toUpperCase())
             .join("");
-        console.log("name", name);
+
         const searchSubmitFun = (e) => {
             e.preventDefault();
         };
@@ -230,7 +228,7 @@ export default function TodoListPage() {
                     onSubmit={(e) => searchSubmitFun(e)}
                 >
                     <TextField
-                        sx={{ width: "min(100%, 800px)" }}
+                        sx={{ maxWidth: "800px" }}
                         value={searchInput}
                         onChange={(e) => searchOnChangeFun(e)}
                         InputProps={{
@@ -241,8 +239,9 @@ export default function TodoListPage() {
                             ),
                         }}
                         id="outlined-basic"
-                        label="search"
+                        label="Search"
                         variant="outlined"
+                        fullWidth
                     />
                 </form>
 
