@@ -160,7 +160,7 @@ export default function TodoListPage() {
                         />
                         <div style={{ display: "flex" }}>
                             <div style={{ flex: 1 }}></div>
-                            <Button sx={{ marginTop: 1 }} type="submit" variant="contained" color="success">
+                            <Button sx={{ marginTop: 1 }} type="submit" variant="contained">
                                 submit
                             </Button>
                         </div>
@@ -264,7 +264,7 @@ export default function TodoListPage() {
                     <div>
                         {data.length > 0 && (
                             <Typography variant="subtitle">
-                                {checkedArr.length} out of {data.length} done!
+                                {checkedArr.length} out of {data.length} done
                             </Typography>
                         )}
                     </div>

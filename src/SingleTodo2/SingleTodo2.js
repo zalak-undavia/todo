@@ -51,7 +51,6 @@ export default function SingleTodo2({ todo, searchInput, onTodoUpdate, onTodoDel
                         <Typography
                             className={todo.done && "done-todo"}
                             sx={{ flex: "1", display: "flex", alignSelf: "center" }}
-                            variant="h6"
                         >
                             <Highlighter
                                 highlightClassName="YourHighlightClass"
@@ -95,10 +94,8 @@ export default function SingleTodo2({ todo, searchInput, onTodoUpdate, onTodoDel
                         </div>
                     )}
                     <div className="todo-row-three">
-                        <div>Time: {new Date(todo.timeWhenCreated).toLocaleString()}</div>
-                        {todo.timeWhenEdited && (
-                            <div>Edited Time: {new Date(todo.timeWhenEdited).toLocaleString()}</div>
-                        )}
+                        <div>Created: {new Date(todo.timeWhenCreated).toLocaleString()}</div>
+                        {todo.timeWhenEdited && <div>Edited: {new Date(todo.timeWhenEdited).toLocaleString()}</div>}
                     </div>
                 </div>
             </Paper>

@@ -1,6 +1,8 @@
-.intro-img-box {
-    /* border: 1px solid red; */
-    padding: 30px;
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .intro-form {
@@ -9,5 +11,4 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
 }

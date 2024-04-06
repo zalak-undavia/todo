@@ -151,7 +151,7 @@
     display: flex;
     color: grey;
     justify-content: space-between;
-    width: min(100%, 800px);
+    width: min(100%, 586px);
 }
 .paper-input-box {
     border-top: 3px solid whitesmoke;

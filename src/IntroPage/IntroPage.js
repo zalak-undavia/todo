@@ -1,19 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import { Button, CardActions, Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import EastIcon from "@mui/icons-material/East";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
-import "./IntroPage.css";
-
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
+
+import "./IntroPage.css";
 
 export default function IntroPage() {
     const [userNameInput, setUserName] = useState("");
@@ -28,77 +30,58 @@ export default function IntroPage() {
     };
 
     return (
-        <div>
-            <div className="App">
-                <div className="main-container">
-                    <Card
-                        elevation={8}
-                        sx={{
-                            p: 10,
-                            textAlign: "center",
-                            borderRadius: "5px",
-                        }}
-                    >
-                        <Typography sx={{ marginTop: "20px" }} color={"grey"} variant="h3" component="div">
-                            DO LIST
-                        </Typography>
+        <Box className="main-container">
+            <Card elevation={8} sx={{ p: 10 }}>
+                <Typography variant="h4" align="center">
+                    TODO | Material UI
+                </Typography>
 
-                        <div className="intro-img-box">
-                            <CardMedia
-                                sx={{ height: "20vh" }}
-                                component="img"
-                                image="https://i.pinimg.com/564x/78/2c/0c/782c0cb2cd1b9f9af5775d6074fe0cb4.jpg"
-                            />
-                        </div>
+                <CardMedia
+                    sx={{ height: "20vh", py: 4 }}
+                    component="img"
+                    image="https://i.pinimg.com/564x/78/2c/0c/782c0cb2cd1b9f9af5775d6074fe0cb4.jpg"
+                />
 
-                        <CardContent
-                            sx={{
-                                marginTop: "-10px",
-                            }}
+                <CardContent>
+                    <Typography align="center" sx={{ marginBottom: 2, color: "text.secondary", fontWeight: "bold" }}>
+                        Welcome to TODO
+                    </Typography>
+                    <Typography align="center" sx={{ width: "400px", color: "text.secondary" }}>
+                        TODO list will help you to stay organized and perform your tasks much faster. This TODO list
+                        uses Material UI to give you familiar look and feel.
+                    </Typography>
+                </CardContent>
+
+                <form className="intro-form" onSubmit={ontoGoTodolist}>
+                    <TextField
+                        sx={{ width: "400px", marginTop: 2 }}
+                        margin="dense"
+                        size="small"
+                        label="User Name"
+                        value={userNameInput}
+                        onChange={(e) => setUserName(e.target.value)}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <EastIcon edge="end"></EastIcon>
+                            </InputAdornment>
+                        }
+                        autoFocus
+                        fullWidth
+                    />
+
+                    <CardActions>
+                        <Button
+                            sx={{ width: "400px" }}
+                            type="submit"
+                            size="large"
+                            variant="contained"
+                            endIcon={<ArrowCircleRightIcon />}
                         >
-                            <Typography
-                                sx={{ textAlign: "center", marginBottom: "10px", color: "grey", fontWeight: "bold" }}
-                                variant="h5"
-                                component="div"
-                            >
-                                WELCOME TO DO LIST
-                            </Typography>
-                            <Typography color="text.secondary">
-                                Do list will helps you <br /> to stay organized and <br /> perform your tasks much
-                                faster.
-                            </Typography>
-                        </CardContent>
-
-                        <form className="intro-form" onSubmit={(e) => ontoGoTodolist(e)}>
-                            <Stack sx={{ marginBottom: "10px", width: "300px", marginLeft: "5px" }}>
-                                <TextField
-                                    autoFocus
-                                    label="Name"
-                                    fullWidth
-                                    value={userNameInput}
-                                    onChange={(e) => setUserName(e.target.value)}
-                                    endAdornment={
-                                        <InputAdornment position="end">
-                                            <EastIcon edge="end"></EastIcon>
-                                        </InputAdornment>
-                                    }
-                                />
-                            </Stack>
-
-                            <CardActions>
-                                <Button
-                                    type="submit"
-                                    sx={{ width: "300px", py: "15px" }}
-                                    variant="contained"
-                                    endIcon={<ArrowCircleRightIcon />}
-                                >
-                                    Let's start
-                                </Button>
-                            </CardActions>
-                        </form>
-                    </Card>
-                </div>
-            </div>
-        </div>
+                            Let's start
+                        </Button>
+                    </CardActions>
+                </form>
+            </Card>
+        </Box>
     );
 }

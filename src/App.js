@@ -1,15 +1,22 @@
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+
 import IntroPage from "./IntroPage/IntroPage";
 import TodoListPage from "./TodoListPage/TodoListPage";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
-import { AuthProvider } from "./auth";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 import { ReqAuth } from "./ReqAuth";
+import { AuthProvider } from "./auth";
+
+const theme = createTheme({
+    typography: {
+        fontFamily: "Fira Sans",
+    },
+});
 
 function App() {
     return (
-        <div>
-            <AuthProvider>
+        <AuthProvider>
+            <ThemeProvider theme={theme}>
                 <Routes>
                     <Route path="/" element={<IntroPage />}></Route>
                     <Route
@@ -21,8 +28,8 @@ function App() {
                         }
                     ></Route>
                 </Routes>
-            </AuthProvider>
-        </div>
+            </ThemeProvider>
+        </AuthProvider>
     );
 }
 
