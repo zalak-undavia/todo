@@ -59,6 +59,7 @@ export default function TodoDetailModal({ todo, onTodoUpdate, onCancel }) {
             <DialogContent dividers sx={{ height: "70vh" }}>
                 <form id="save-changes-btn-id" className="save-from" onSubmit={onCommitChanges}>
                     <TextField
+                        required
                         autoFocus
                         sx={{ marginBottom: 2 }}
                         label="Name"
@@ -102,7 +103,7 @@ export default function TodoDetailModal({ todo, onTodoUpdate, onCancel }) {
                 <Button sx={{ mx: 2 }} onClick={onCancel}>
                     Cancel
                 </Button>
-                <Button form="save-changes-btn-id" type="submit" variant="contained" color="success">
+                <Button form="save-changes-btn-id" type="submit" variant="contained">
                     Save changes
                 </Button>
             </DialogActions>

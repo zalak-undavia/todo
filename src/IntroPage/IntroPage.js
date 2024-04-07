@@ -31,13 +31,13 @@ export default function IntroPage() {
 
     return (
         <Box sx={{ p: 3 }} className="main-container">
-            <Card elevation={8} sx={{ p: 10 }}>
+            <Card elevation={8} sx={{ p: 4 }}>
                 <Typography variant="h4" align="center">
                     TODO | Material UI
                 </Typography>
 
                 <CardMedia
-                    sx={{ height: "20vh", py: 4 }}
+                    sx={{ height: "30vh", py: 4 }}
                     component="img"
                     image="https://i.pinimg.com/564x/78/2c/0c/782c0cb2cd1b9f9af5775d6074fe0cb4.jpg"
                 />
@@ -54,7 +54,7 @@ export default function IntroPage() {
 
                 <form className="intro-form" onSubmit={ontoGoTodolist}>
                     <TextField
-                        sx={{ width: "400px", marginTop: 2 }}
+                        sx={{ minWidth: "min(100% , 400px)", marginTop: 2 }}
                         margin="dense"
                         size="small"
                         label="User Name"
@@ -66,20 +66,16 @@ export default function IntroPage() {
                             </InputAdornment>
                         }
                         autoFocus
-                        fullWidth
                     />
-
-                    <CardActions>
-                        <Button
-                            sx={{ width: "400px" }}
-                            type="submit"
-                            size="large"
-                            variant="contained"
-                            endIcon={<ArrowCircleRightIcon />}
-                        >
-                            Let's start
-                        </Button>
-                    </CardActions>
+                    <Button
+                        sx={{ minWidth: "min(100% , 400px)", marginTop: 2 }}
+                        type="submit"
+                        size="large"
+                        variant="contained"
+                        endIcon={<ArrowCircleRightIcon />}
+                    >
+                        Let's start
+                    </Button>
                 </form>
             </Card>
         </Box>

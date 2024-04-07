@@ -45,11 +45,11 @@ export default function SubTask({ task, onTaskUpdate, onDeleteSubTask }) {
                         ></TextField>
                     </form>
                 ) : (
-                    <div className="div-sub-task">{task.subTaskName}</div>
+                    <div className={`div-sub-task ${task.subTaskChecked ? "done-todo" : ""}`}>{task.subTaskName}</div>
                 )}
             </div>
 
-            {!task.isEditModeOn && (
+            {!task.isEditModeOn && !task.subTaskChecked && (
                 <IconButton onClick={() => editSubTaskName()}>
                     <EditIcon />
                 </IconButton>

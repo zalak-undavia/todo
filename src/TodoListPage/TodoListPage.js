@@ -57,7 +57,8 @@ export default function TodoListPage() {
         setData([...data]);
     };
 
-    const checkedArr = data.filter((v) => v.done === true);
+    const doneCount = doneData.length;
+    const totalCount = data.length + doneData.length;
 
     const renderListSection = () => {
         return (
@@ -265,7 +266,7 @@ export default function TodoListPage() {
                     <div>
                         {data.length > 0 && (
                             <Typography variant="subtitle">
-                                {checkedArr.length} out of {data.length} done
+                                {doneCount} out of {totalCount} done
                             </Typography>
                         )}
                     </div>
