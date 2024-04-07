@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -112,7 +113,7 @@ export default function TodoListPage() {
             </div>
         );
     };
-    //
+
     const renderInputSection = () => {
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -255,9 +256,9 @@ export default function TodoListPage() {
     return (
         <div className="todolist-container">
             {/* search -section */}
-            <div className="search-section">
+            <Box sx={{ p: 2 }} className="search-section">
                 <div className="search-section-middle">{renderSearchSection()}</div>
-            </div>
+            </Box>
             {/* to do info section */}
             <div className="todo-info">
                 <div className="todo-info-detail">
@@ -293,5 +294,4 @@ export default function TodoListPage() {
 }
 
 // notes -
-//  1.ma text overflow valu joje
 // 2.state managment

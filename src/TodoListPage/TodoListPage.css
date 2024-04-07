@@ -92,8 +92,6 @@
     /* height: 10vh; */
     display: flex;
     box-shadow: 2px 2px 4px gray;
-    padding-top: 16px;
-    padding-bottom: 16px;
     flex-direction: row;
 }
 

@@ -30,7 +30,7 @@ export default function IntroPage() {
     };
 
     return (
-        <Box className="main-container">
+        <Box sx={{ p: 3 }} className="main-container">
             <Card elevation={8} sx={{ p: 10 }}>
                 <Typography variant="h4" align="center">
                     TODO | Material UI
@@ -46,7 +46,7 @@ export default function IntroPage() {
                     <Typography align="center" sx={{ marginBottom: 2, color: "text.secondary", fontWeight: "bold" }}>
                         Welcome to TODO
                     </Typography>
-                    <Typography align="center" sx={{ width: "400px", color: "text.secondary" }}>
+                    <Typography align="center" sx={{ maxWidth: "400px", color: "text.secondary" }}>
                         TODO list will help you to stay organized and perform your tasks much faster. This TODO list
                         uses Material UI to give you familiar look and feel.
                     </Typography>
