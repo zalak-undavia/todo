@@ -23,7 +23,6 @@ export default function TodoDetailModal({ todo, onTodoUpdate, onCancel }) {
     };
 
     const onCommitChanges = (e) => {
-        console.log("localtodo", localTodo);
         localTodo.subTasks = localTodo.subTasks.filter((v, i) => {
             return v.subTaskName !== "";
         });
@@ -86,7 +85,6 @@ export default function TodoDetailModal({ todo, onTodoUpdate, onCancel }) {
                         {localTodo.subTasks.map((v, i) => {
                             return (
                                 <div key={i}>
-                                    <div>{console.log("v", v)}</div>
                                     <SubTask
                                         task={v}
                                         onDeleteSubTask={() => onDeleteSubTask(i)}

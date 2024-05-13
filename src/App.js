@@ -15,21 +15,29 @@ const theme = createTheme({
 
 function App() {
     return (
-        <AuthProvider>
-            <ThemeProvider theme={theme}>
-                <Routes>
-                    <Route path="/" element={<IntroPage />}></Route>
-                    <Route
-                        path="/todoList"
-                        element={
-                            <ReqAuth>
-                                <TodoListPage />
-                            </ReqAuth>
-                        }
-                    ></Route>
-                </Routes>
-            </ThemeProvider>
-        </AuthProvider>
+        <>
+            <AuthProvider>
+                <ThemeProvider theme={theme}>
+                    <Routes>
+                        <Route path="/" element={<IntroPage />}></Route>
+                        <Route
+                            path="/todoList"
+                            element={
+                                <ReqAuth>
+                                    <TodoListPage />
+                                </ReqAuth>
+                            }
+                        ></Route>
+                    </Routes>
+                </ThemeProvider>
+            </AuthProvider>
+            <div className="name-footer">
+                Created with ❤️ by
+                <a className="profile-link" target="_blank" href="https://github.com/zalak-undavia/todo">
+                    Zalak Undavia
+                </a>
+            </div>
+        </>
     );
 }
 

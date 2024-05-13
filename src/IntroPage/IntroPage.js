@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -23,7 +22,7 @@ export default function IntroPage() {
     const auth = useAuth();
     const nav = useNavigate();
 
-    const ontoGoTodolist = (e) => {
+    const onToGoTodolist = (e) => {
         e.preventDefault();
         auth.isUserLoggedIn(userNameInput);
         nav("/todoList");
@@ -52,7 +51,7 @@ export default function IntroPage() {
                     </Typography>
                 </CardContent>
 
-                <form className="intro-form" onSubmit={ontoGoTodolist}>
+                <form className="intro-form" onSubmit={onToGoTodolist}>
                     <TextField
                         sx={{ minWidth: "min(100% , 400px)", marginTop: 2 }}
                         margin="dense"

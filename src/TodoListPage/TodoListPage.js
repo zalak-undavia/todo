@@ -184,10 +184,6 @@ export default function TodoListPage() {
             e.preventDefault();
         };
 
-        const searchOnChangeFun = (e) => {
-            setSearchInput(e.target.value);
-        };
-
         return (
             <>
                 <form
@@ -200,7 +196,7 @@ export default function TodoListPage() {
                         margin="dense"
                         size="small"
                         value={searchInput}
-                        onChange={searchOnChangeFun}
+                        onChange={(e) => setSearchInput(e.target.value)}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment position="start">
@@ -221,6 +217,7 @@ export default function TodoListPage() {
 
     const onClearAllTasksFun = () => {
         setData([]);
+        setDoneData([]);
         setOpenClearAllModal(false);
     };
 
@@ -293,6 +290,3 @@ export default function TodoListPage() {
         </div>
     );
 }
-
-// notes -
-// 2.state managment

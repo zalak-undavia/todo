@@ -115,9 +115,3 @@ export default function SingleTodo2({ todo, searchInput, onTodoUpdate, onTodoDel
         </>
     );
 }
-
-// const now = Date.now() <- Current instant in ms
-// Have tare ene human readable format ma laavvi hoi tom
-// const time = new Date(now);
-// time.toLocaleString()
-// time.toISOString();

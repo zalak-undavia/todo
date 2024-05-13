@@ -30,7 +30,7 @@ export default function SubTask({ task, onTaskUpdate, onDeleteSubTask }) {
     };
 
     return (
-        <div className="hii">
+        <div className="subtask-box">
             <Checkbox checked={task.subTaskChecked} onChange={() => onChangeOfDoneSubTask()} />
             <div className="text-field-container">
                 {task.isEditModeOn ? (

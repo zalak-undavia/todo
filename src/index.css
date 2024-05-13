@@ -7,3 +7,19 @@ body {
     background-origin: padding-box;
     box-sizing: border-box;
 }
+
+.name-footer {
+    /* border: 10px solid red; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    /* color: #666666; */
+    color: grey;
+}
+
+.profile-link {
+    margin-left: 8px;
+}

@@ -33,63 +33,15 @@
     margin-top: 10px;
 }
 
-.single-todo {
-    /* border: 1px solid black; */
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
-.done-todo {
-    text-decoration: line-through;
-}
-
-.focusOnDiv {
-    background-color: white !important ;
-}
-
-.abt-time-of-todo {
-    display: block;
-    /* border: 1px solid blue; */
-}
-
-.todo-row-one {
-    /* border: 1px solid red; */
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.todo-row-two {
-    /* border: 1px solid red; */
-    padding-left: 12px;
-    display: flex;
-    margin-bottom: 22px;
-    color: gray;
-}
-
-.todo-row-three {
-    /* border: 1px solid red; */
-    word-spacing: 3px;
-    display: flex;
-    padding-left: 12px;
-    color: grey;
-    justify-content: space-between;
-}
-
 .form-section {
     border: 10px solid black;
     width: 100%;
 }
 
-.YourHighlightClass {
-    background-color: HEX #fbf719;
-}
 /* search */
 
 .search-section {
     /* border: 10px solid red; */
-    /* border-bottom: 3px solid whitesmoke; */
-    /* height: 10vh; */
     display: flex;
     box-shadow: 2px 2px 4px gray;
     flex-direction: row;
@@ -153,15 +105,15 @@
 }
 .paper-input-box {
     border-top: 3px solid whitesmoke;
-
     display: flex;
     justify-content: center;
-
     padding: 12px;
 }
 
 .input-form-section {
+    /* border: 10px solid red; */
     width: min(100%, 600px);
+    padding-bottom: 40px;
 }
 
 .avtar-todo-username {

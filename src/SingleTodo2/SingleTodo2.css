@@ -1,1 +1,46 @@
+.single-todo {
+    /* border: 1px solid black; */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
 
+.done-todo {
+    text-decoration: line-through;
+}
+
+.focusOnDiv {
+    background-color: white !important ;
+}
+
+.abt-time-of-todo {
+    display: block;
+    /* border: 1px solid blue; */
+}
+
+.todo-row-one {
+    /* border: 1px solid red; */
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.todo-row-two {
+    /* border: 1px solid red; */
+    padding-left: 12px;
+    display: flex;
+    margin-bottom: 22px;
+    color: gray;
+}
+
+.todo-row-three {
+    /* border: 1px solid red; */
+    word-spacing: 3px;
+    display: flex;
+    padding-left: 12px;
+    color: grey;
+    justify-content: space-between;
+}
+
+.YourHighlightClass {
+    background-color: HEX #fbf719;
+}
